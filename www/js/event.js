@@ -2,7 +2,7 @@ angular.module('app.event', ['pascalprecht.translate', 'ui-leaflet'])
 
 .controller('EventCtrl', function($scope, $http, $ionicModal,
         $stateParams, $timeout, $ionicLoading, $filter,
-        leafletData, leafletBoundsHelpers) {
+        leafletData, leafletBoundsHelpers, $cordovaSocialSharing) {
 
 
     $scope.center= {
@@ -54,4 +54,18 @@ angular.module('app.event', ['pascalprecht.translate', 'ui-leaflet'])
     };
     $scope.doRefresh();
 
+
+    $scope.share = function(){
+        var message = "hola, això ho comparteixo";
+        var subject = 'compartició';
+        var file= ['',''];
+        var link = "http://duckduckgo.com";
+        $cordovaSocialSharing
+        .share(message, subject, file, link) // Share via native share sheet
+        .then(function(result) {
+          // Success!
+        }, function(err) {
+          // An error occured. Show a message to the user
+      });
+    };
 });

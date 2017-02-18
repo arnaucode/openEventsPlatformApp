@@ -1,9 +1,12 @@
-var urlapi = "http://localhost:3000/api/";
+//var urlapi = "http://localhost:3000/api/";
+var urlapi = "http://192.168.1.35:3000/api/";
+
 
 
 angular.module('app', [
     'ionic',
     'pascalprecht.translate',
+    'ngCordova',
     'app.menu',
     'app.main',
     'app.events',

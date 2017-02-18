@@ -83,6 +83,52 @@
 }
 
 
+/* indigo */
+.c_indigo50{
+    background:#E8EAF6;
+    color: #000000;
+}
+.c_indigo100{
+    background:#C5CAE9;
+    color: #000000;
+}
+.c_indigo200{
+    background:#9FA8DA;
+    color: #000000;
+}
+.c_indigo300{
+    background:#7986CB;
+    color: #ffffff;
+}
+.c_indigo400{
+    background:#5C6BC0;
+    color: #ffffff;
+}
+.c_indigo500{
+    background:#3F51B5;
+    color: #ffffff;
+}
+.c_indigo600{
+    background:#3949AB;
+    color: #ffffff;
+}
+.c_indigo700{
+    background:#303F9F;
+    color: #ffffff;
+}
+.c_indigo800{
+    background:#283593;
+    color: #ffffff;
+}
+.c_indigo900{
+    background:#1A237E;
+    color: #ffffff;
+}
+
+.ct_indigo500{
+    color: #3F51B5!important;
+}
+
 /* green */
 .c_green50{
     background: #E8F5E9;
@@ -206,48 +252,5 @@
 }
 .c_orange900{
     background: #E65100;
-    color: #ffffff;
-}
-
-
-/* indigo */
-.c_indigo50{
-    background:#E8EAF6;
-    color: #000000;
-}
-.c_indigo100{
-    background:#C5CAE9;
-    color: #000000;
-}
-.c_indigo200{
-    background:#9FA8DA;
-    color: #000000;
-}
-.c_indigo300{
-    background:#7986CB;
-    color: #ffffff;
-}
-.c_indigo400{
-    background:#5C6BC0;
-    color: #ffffff;
-}
-.c_indigo500{
-    background:#3F51B5;
-    color: #ffffff;
-}
-.c_indigo600{
-    background:#3949AB;
-    color: #ffffff;
-}
-.c_indigo700{
-    background:#303F9F;
-    color: #ffffff;
-}
-.c_indigo800{
-    background:#283593;
-    color: #ffffff;
-}
-.c_indigo900{
-    background:#1A237E;
     color: #ffffff;
 }

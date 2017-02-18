@@ -1,24 +1,26 @@
 <ion-view view-title="Event">
   <ion-content>
-      <a class="item item-avatar" ng-href="#/app/users/{{event.user._id}}">
-        <img ng-src="{{event.user.img}}">
-        <h2>{{event.user.username}}</h2>
-        <p>{{event.user.description}}</p>
+    <a class="item item-avatar" ng-href="#/app/users/{{event.user._id}}">
+      <img ng-src="{{event.user.img}}">
+      <h2>{{event.user.username}}</h2>
+      <p>{{event.user.description}}</p>
     </a>
-        <a class="item">
-          <h2>{{event.title}}</h2>
-          <p>{{event.description}}</p>
-          <p>{{event.date | date: 'HH:mm, dd/MM/yyyy'}}</p>
-        </a>
-
-      <div class="item item-image">
-        <img ng-src="{{event.img}}">
-      </div>
+    <div class="item item-image">
+      <img ng-src="{{event.img}}">
+    </div>
+    <div class="item">
+      <h2>{{event.title}}</h2>
+      <p>{{event.description}}</p>
+      <p>{{event.date | date: 'HH:mm, dd/MM/yyyy'}}</p>
+  </div>
 
     <div class="item">
-        <h2>Map</h2>
+      <h2>Map</h2>
     </div>
-
     <leaflet width="100%" height="40%" markers="markers" center="center" tiles="tiles" id="map-simple-map"></leaflet>
+
+    <a class="item item-icon-left ct_indigo500" ng-click="share()">
+      <i class="icon ion-android-share-alt"></i> Share
+    </a>
   </ion-content>
 </ion-view>
