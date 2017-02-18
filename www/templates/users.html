@@ -1,0 +1,18 @@
+<ion-view view-title="Users">
+  <ion-content>
+      <ion-refresher
+        pulling-text="{{'Pull_to_refresh' | translate}}..."
+        on-refresh="doRefresh()">
+      </ion-refresher>
+    <ion-list><!-- item-remove-animate -->
+      <ion-item class="item-avatar item-icon-right"
+      ng-repeat="user in users" type="item-text-wrap" href="#/app/users/{{user._id}}">
+        <img ng-src="{{user.img}}">
+        <h2>{{user.username}}</h2>
+        <p>{{user.email}}</p>
+
+        <span class="badge badge-balanced">Following</span>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,17 @@
+<ion-view view-title="Events">
+  <ion-content>
+      <ion-refresher
+        pulling-text="{{'Pull_to_refresh' | translate}}..."
+        on-refresh="doRefresh()">
+      </ion-refresher>
+
+    <a class="item item-thumbnail-left" href="#/app/events/{{event._id}}"
+    ng-repeat="event in events">
+      <img ng-src="{{event.img}}">
+      <div class="badge item-note">{{event.user.username}}</div>
+      <h2>{{event.title}}</h2>
+      <p>{{event.description}}</p>
+      <p>{{event.date | date: 'HH:mm, dd/MM/yyyy'}}</p>
+    </a>
+  </ion-content>
+</ion-view>
