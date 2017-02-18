@@ -1,1 +1,13 @@
 /* Empty. Add your own CSS if you like */
+.o_mainOptionRow{
+    height: calc(100%/4);
+    display: table;
+    padding: 0;
+}
+.o_mainOptionRow a{
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    width: 50%;
+    font-size: 300%;
+}

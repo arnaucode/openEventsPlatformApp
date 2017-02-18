@@ -5,6 +5,7 @@ angular.module('app', [
     'ionic',
     'pascalprecht.translate',
     'app.menu',
+    'app.main',
     'app.events',
     'app.event',
     'app.users',
@@ -38,8 +39,15 @@ angular.module('app', [
         controller: 'MenuCtrl'
     })
 
-    // Each tab has its own nav history stack:
-
+    .state('app.main', {
+      url: '/main',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/main.html',
+          controller: 'MainCtrl'
+        }
+      }
+    })
     .state('app.events', {
       url: '/events',
       views: {
@@ -48,7 +56,8 @@ angular.module('app', [
           controller: 'EventsCtrl'
         }
       }
-    }).state('app.event', {
+    })
+    .state('app.event', {
       url: '/events/:eventid',
       views: {
         'menuContent': {

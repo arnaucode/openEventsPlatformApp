@@ -18,21 +18,24 @@
     </ion-header-bar>
     <ion-content>
       <ion-list>
-        <ion-item menu-close href="#/app/events">
-          Events
-        </ion-item>
-        <ion-item menu-close href="#/app/users">
-          Users
-        </ion-item>
-        <ion-item menu-close href="#/app/search">
-          Search
-        </ion-item>
-        <ion-item menu-close href="#/app/settings">
-          Settings
-        </ion-item>
-        <ion-item menu-close href="#/app/login">
-          User login
-        </ion-item>
+        <a class="item item-icon-left o_bSidenav" menu-close ng-href="#/app/main">
+          <i class="icon ion-home"></i> {{'Main' | translate }}
+        </a>
+        <a class="item item-icon-left" menu-close href="#/app/events">
+          <i class="icon ion-calendar"></i> Events
+        </a>
+        <a class="item item-icon-left" menu-close href="#/app/users">
+          <i class="icon ion-person-stalker"></i> Users
+        </a>
+        <a class="item item-icon-left" menu-close href="#/app/search">
+          <i class="icon ion-search"></i> Search
+        </a>
+        <a class="item item-icon-left" menu-close href="#/app/settings">
+          <i class="icon ion-ios-gear"></i> Settings
+        </a>
+        <a class="item item-icon-left" menu-close href="#/app/login">
+          <i class="icon ion-home"></i> User login
+        </a>
       </ion-list>
     </ion-content>
   </ion-side-menu>
