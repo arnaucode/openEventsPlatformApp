@@ -1,6 +1,6 @@
 /* Empty. Add your own CSS if you like */
 .o_mainOptionRow{
-    height: calc(100%/4);
+    height: calc(103%/4);
     display: table;
     padding: 0;
 }
@@ -10,4 +10,11 @@
     vertical-align: middle;
     width: 50%;
     font-size: 300%;
+}
+
+.o_floatRight{
+    float: right;
+}
+.o_textRight{
+    text-align: right;
 }

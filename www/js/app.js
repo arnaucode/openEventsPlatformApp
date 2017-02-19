@@ -1,5 +1,5 @@
-//var urlapi = "http://localhost:3000/api/";
-var urlapi = "http://192.168.1.35:3000/api/";
+var urlapi = "http://localhost:3000/api/";
+//var urlapi = "http://192.168.1.35:3000/api/";
 
 
 
@@ -89,7 +89,7 @@ angular.module('app', [
     });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/events');
+  $urlRouterProvider.otherwise('/app/main');
 })
   /* translator */
   .config(['$translateProvider', function($translateProvider) {

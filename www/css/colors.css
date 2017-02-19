@@ -129,6 +129,91 @@
     color: #3F51B5!important;
 }
 
+/* blue */
+.c_blue50{
+    background: #E3F2FD;
+    color: #000000;
+}
+.c_blue100{
+    background: #BBDEFB;
+    color: #000000;
+}
+.c_blue200{
+    background: #90CAF9;
+    color: #000000;
+}
+.c_blue300{
+    background: #64B5F6;
+    color: #ffffff;
+}
+.c_blue400{
+    background: #42A5F5;
+    color: #ffffff;
+}
+.c_blue500{
+    background: #2196F3;
+    color: #ffffff;
+}
+.c_blue600{
+    background: #1E88E5;
+    color: #ffffff;
+}
+.c_blue700{
+    background: #1976D2;
+    color: #ffffff;
+}
+.c_blue800{
+    background: #1565C0;
+    color: #ffffff;
+}
+.c_blue900{
+    background: #0D47A1;
+    color: #ffffff;
+}
+
+
+/* cyan */
+.c_cyan50{
+    background: #E0F7FA;
+    color: #000000;
+}
+.c_cyan100{
+    background: #B2EBF2;
+    color: #000000;
+}
+.c_cyan200{
+    background: #80DEEA;
+    color: #000000;
+}
+.c_cyan300{
+    background: #4DD0E1;
+    color: #ffffff;
+}
+.c_cyan400{
+    background: #26C6DA;
+    color: #ffffff;
+}
+.c_cyan500{
+    background: #00BCD4;
+    color: #ffffff;
+}
+.c_cyan600{
+    background: #00ACC1;
+    color: #ffffff;
+}
+.c_cyan700{
+    background: #0097A7;
+    color: #ffffff;
+}
+.c_cyan800{
+    background: #00838F;
+    color: #ffffff;
+}
+.c_cyan900{
+    background: #006064;
+    color: #ffffff;
+}
+
 /* green */
 .c_green50{
     background: #E8F5E9;
@@ -252,5 +337,48 @@
 }
 .c_orange900{
     background: #E65100;
+    color: #ffffff;
+}
+
+
+/* blue grey */
+.c_blueGrey50{
+    background: #ECEFF1;
+    color: #000000;
+}
+.c_blueGrey100{
+    background: #CFD8DC;
+    color: #000000;
+}
+.c_blueGrey200{
+    background: #B0BEC5;
+    color: #000000;
+}
+.c_blueGrey300{
+    background: #90A4AE;
+    color: #ffffff;
+}
+.c_blueGrey400{
+    background: #78909C;
+    color: #ffffff;
+}
+.c_blueGrey500{
+    background: #607D8B;
+    color: #ffffff;
+}
+.c_blueGrey600{
+    background: #546E7A;
+    color: #ffffff;
+}
+.c_blueGrey700{
+    background: #455A64;
+    color: #ffffff;
+}
+.c_blueGrey800{
+    background: #37474F;
+    color: #ffffff;
+}
+.c_blueGrey900{
+    background: #263238;
     color: #ffffff;
 }

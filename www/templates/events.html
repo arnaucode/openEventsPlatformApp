@@ -1,17 +1,35 @@
 <ion-view view-title="Events">
   <ion-content>
-      <ion-refresher
-        pulling-text="{{'Pull_to_refresh' | translate}}..."
-        on-refresh="doRefresh()">
-      </ion-refresher>
+    <ion-refresher pulling-text="{{'Pull_to_refresh' | translate}}..." on-refresh="doRefresh()">
+    </ion-refresher>
 
-    <a class="item item-thumbnail-left" href="#/app/events/{{event._id}}"
+    <!--<a class="item item-thumbnail-left" href="#/app/events/{{event._id}}"
     ng-repeat="event in events">
       <img ng-src="{{event.img}}">
       <div class="badge item-note">{{event.user.username}}</div>
       <h2>{{event.title}}</h2>
       <p>{{event.description}}</p>
       <p>{{event.date | date: 'HH:mm, dd/MM/yyyy'}}</p>
-    </a>
+  </a>-->
+    <div ng-repeat="event in events">
+
+      <a class="item item-avatar" ng-href="#/app/users/{{event.user._id}}">
+        <img ng-src="{{event.user.img}}">
+        <h2>{{event.user.username}}</h2>
+        <p>{{event.user.shortDescription}}</p>
+      </a>
+      <a ng-href="#/app/events/{{event._id}}" class="item item-image">
+
+        <img ng-src="{{event.img}}">
+        <h2>{{event.title}}</h2>
+        <p>{{event.description}}</p>
+        <p>{{event.date | date: 'HH:mm, dd/MM/yyyy'}}</p>
+
+        <a class="item item-icon-left ct_indigo500" ng-click="share()">
+          <i class="icon ion-android-share-alt"></i> Share
+        </a>
+        <div class="item"></div>
+      </a>
+    </div>
   </ion-content>
 </ion-view>

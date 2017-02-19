@@ -9,7 +9,7 @@
       ng-repeat="user in users" type="item-text-wrap" href="#/app/users/{{user._id}}">
         <img ng-src="{{user.img}}">
         <h2>{{user.username}}</h2>
-        <p>{{user.email}}</p>
+        <p>{{user.shortDescription}}</p>
 
         <span class="badge badge-balanced">Following</span>
       </ion-item>
