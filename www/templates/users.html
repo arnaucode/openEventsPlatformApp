@@ -5,14 +5,27 @@
         on-refresh="doRefresh()">
       </ion-refresher>
     <ion-list><!-- item-remove-animate -->
-      <ion-item class="item-avatar item-icon-right"
-      ng-repeat="user in users" type="item-text-wrap" href="#/app/users/{{user._id}}">
-        <img ng-src="{{user.img}}">
-        <h2>{{user.username}}</h2>
-        <p>{{user.shortDescription}}</p>
+        <div ng-repeat="user in users">
+        <div class="item-note">
+            <div class="button button-small button-assertive"
+            ng-show="isUserFollowed(user)"
+            ng-click="unfollowUser(user)">
+                Unfollow
+            </div>
+            <div class="button button-small button-balanced"
+            ng-hide="isUserFollowed(user)"
+            ng-click="followUser(user)">
+                Follow
+            </div>
+        </div>
+              <ion-item class="item-avatar"
+              type="item-text-wrap" href="#/app/users/{{user._id}}">
+                <img ng-src="{{user.img}}">
 
-        <span class="badge badge-balanced">Following</span>
-      </ion-item>
+                <h2>{{user.username}}</h2>
+                <p>{{user.shortDescription}}</p>
+              </ion-item>
+          </div>
     </ion-list>
   </ion-content>
 </ion-view>

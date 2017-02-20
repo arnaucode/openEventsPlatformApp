@@ -24,4 +24,32 @@ angular.module('app.users', ['pascalprecht.translate'])
     };
     $scope.doRefresh();
 
+    $scope.followingUsers=[];
+    $scope.$on('$ionicView.enter', function(){//per executar-ho cada cop que es carrega el view
+        if (localStorage.getItem("events_app_followingUsers")) {
+          $scope.followingUsers = JSON.parse(localStorage.getItem("events_app_followingUsers"));
+          console.log("followingUsers");
+          console.log($scope.followingUsers);
+        }
+    });
+    $scope.followUser = function(user){
+        $scope.followingUsers.push(user);
+        localStorage.setItem("events_app_followingUsers", JSON.stringify($scope.followingUsers));
+    };
+    $scope.unfollowUser = function(user){
+        for(var i=0; i<$scope.followingUsers.length; i++) {
+            if ($scope.followingUsers[i]._id === user._id){
+                $scope.followingUsers.splice(i, 1);
+            }
+        }
+        localStorage.setItem("events_app_followingUsers", JSON.stringify($scope.followingUsers));
+    };
+    $scope.isUserFollowed = function(user) {
+        for(var i=0; i<$scope.followingUsers.length; i++) {
+            if ($scope.followingUsers[i]._id === user._id){
+                return true;
+            }
+        }
+        return false;
+    };
 });
