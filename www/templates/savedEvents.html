@@ -1,7 +1,5 @@
-<ion-view view-title="Events">
+<ion-view view-title="Saved Events">
   <ion-content class="c_blueGrey100">
-    <ion-refresher pulling-text="{{'Pull_to_refresh' | translate}}..." on-refresh="doRefresh()">
-    </ion-refresher>
     <div class="card" ng-repeat="event in events">
       <a class="item item-avatar" ng-href="#/app/users/{{event.user._id}}">
         <img ng-src="{{event.user.img}}">

@@ -55,9 +55,9 @@ angular.module('app.event', ['pascalprecht.translate', 'ui-leaflet'])
     $scope.doRefresh();
 
 
-    $scope.share = function(){
-        var message = "hola, això ho comparteixo";
-        var subject = 'compartició';
+    $scope.share = function(event){
+        var message = event.description;
+        var subject = event.title;
         var file= ['',''];
         var link = "http://duckduckgo.com";
         $cordovaSocialSharing
