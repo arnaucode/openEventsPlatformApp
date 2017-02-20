@@ -137,8 +137,8 @@ angular.module('app', [
   .factory('api', function($http) {
     return {
       init: function() {
-        $http.defaults.headers.common['X-Access-Token'] = localStorage.getItem("cim_app_token");
-        $http.defaults.headers.post['X-Access-Token'] = localStorage.getItem("cim_app_token");
+        $http.defaults.headers.common['X-Access-Token'] = localStorage.getItem("events_app_token");
+        $http.defaults.headers.post['X-Access-Token'] = localStorage.getItem("events_app_token");
       }
     };
   })

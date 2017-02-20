@@ -1,13 +1,15 @@
 angular.module('app.events', ['pascalprecht.translate'])
 
-.controller('EventsCtrl', function($scope, $http, $ionicModal, $timeout, $ionicLoading, $filter) {
+.controller('EventsCtrl', function($scope, $http, $ionicModal,
+            $timeout, $ionicLoading, $filter) {
 
 
     $scope.events=[];
     $scope.page=0;
     $scope.doRefresh = function() {
       /* events refresh: */
-        $http.get(urlapi + 'events?page=' + $scope.page)
+        //$http.get(urlapi + 'events?page=' + $scope.page)
+        $http.get(urlapi + 'events')
         .then(function(data){
             console.log('data success events');
             console.log(data); // for browser console
@@ -25,12 +27,12 @@ angular.module('app.events', ['pascalprecht.translate'])
     $scope.doRefresh();
 
     $scope.share = function(event){
-        var message = event.description;
-        var subject = event.title;
-        var file= ['',''];
+        var message = "[" + event.title + "]" + event.description;
+        /*var subject = event.title;
+        var file= ['',''];*/
         var link = "http://duckduckgo.com";
         $cordovaSocialSharing
-        .share(message, subject, file, link) // Share via native share sheet
+        .share(message, link) // Share via native share sheet
         .then(function(result) {
           // Success!
         }, function(err) {

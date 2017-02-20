@@ -56,12 +56,12 @@ angular.module('app.event', ['pascalprecht.translate', 'ui-leaflet'])
 
 
     $scope.share = function(event){
-        var message = event.description;
-        var subject = event.title;
-        var file= ['',''];
+        var message = "[" + event.title + "]" + event.description;
+        /*var subject = event.title;
+        var file= ['',''];*/
         var link = "http://duckduckgo.com";
         $cordovaSocialSharing
-        .share(message, subject, file, link) // Share via native share sheet
+        .share(message, link) // Share via native share sheet
         .then(function(result) {
           // Success!
         }, function(err) {
