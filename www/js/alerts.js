@@ -1,16 +1,15 @@
-angular.module('app.events', ['pascalprecht.translate'])
+angular.module('app.alerts', ['pascalprecht.translate'])
 
-.controller('EventsCtrl', function($scope, $http, $ionicModal,
+.controller('AlertsCtrl', function($scope, $http, $ionicModal,
             $timeout, $ionicLoading, $filter) {
 
 
     $scope.events=[];
-    $scope.alerts=[];
     $scope.page=0;
     $scope.doRefresh = function() {
       /* events refresh: */
         //$http.get(urlapi + 'events?page=' + $scope.page)
-        $http.get(urlapi + 'events')
+        $http.get(urlapi + 'alerts')
         .then(function(data){
             console.log('data success events');
             console.log(data); // for browser console
@@ -23,11 +22,6 @@ angular.module('app.events', ['pascalprecht.translate'])
             $scope.$broadcast('scroll.refreshComplete');//refresher stop
             $ionicLoading.show({ template: 'Error connecting server', noBackdrop: true, duration: 2000 });
 
-        });
-        $http.get(urlapi + 'alerts')
-        .then(function(data){
-            $scope.alerts=data.data;
-        }, function(data){
         });
     };
     $scope.doRefresh();

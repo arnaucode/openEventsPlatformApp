@@ -11,6 +11,7 @@ angular.module('app', [
     'app.main',
     'app.events',
     'app.event',
+    'app.alerts',
     'app.savedEvents',
     'app.users',
     'app.user'
@@ -67,6 +68,15 @@ angular.module('app', [
         'menuContent': {
           templateUrl: 'templates/event.html',
           controller: 'EventCtrl'
+        }
+      }
+    })
+    .state('app.alerts', {
+      url: '/alerts',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/alerts.html',
+          controller: 'AlertsCtrl'
         }
       }
     })
