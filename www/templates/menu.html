@@ -30,7 +30,7 @@
         <a class="item item-icon-left" menu-close href="#/app/savedEvents">
           <i class="icon ion-heart"></i> Saved Events
         </a>
-        <a class="item item-icon-left" menu-close href="#/app/events">
+        <a class="item item-icon-left" menu-close href="#/app/byCategories">
           <i class="icon ion-pound"></i> By Categories
         </a>
         <a class="item item-icon-left" menu-close href="#/app/events">
@@ -45,8 +45,13 @@
         <a class="item item-icon-left" menu-close href="#/app/settings">
           <i class="icon ion-ios-gear"></i> Settings
         </a>
-        <a class="item item-icon-left" menu-close href="#/app/login">
-          <i class="icon ion-home"></i> User login
+        <a class="item item-icon-left" menu-close href="#/app/login"
+        ng-show="!storageuser">
+          <i class="icon ion-log-in"></i> Login
+        </a>
+        <a class="item item-icon-left" menu-close ng-click="logout()"
+        ng-show="storageuser">
+          <i class="icon ion-log-out"></i> Logout
         </a>
       </ion-list>
     </ion-content>

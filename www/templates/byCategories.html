@@ -1,0 +1,42 @@
+<ion-view view-title="Events By Categories">
+  <ion-content class="c_blueGrey100">
+    <ion-refresher pulling-text="{{'Pull_to_refresh' | translate}}..." on-refresh="doRefresh()">
+    </ion-refresher>
+    <a href="#/app/alerts" class="item item-icon-left c_red400"
+    ng-show="alerts">
+        <i class="icon ion-android-alert"></i> <b>{{alerts.length}}</b> Emergency alerts!
+    </a>
+    <div class="card" ng-repeat="event in events">
+      <a class="item item-avatar" ng-href="#/app/users/{{event.user._id}}">
+        <img ng-src="{{event.user.img}}">
+        <h2>{{event.user.username}}</h2>
+        <p>{{event.user.shortDescription}}</p>
+      </a>
+      <a ng-href="#/app/events/{{event._id}}" class="item item-image"
+      ng-show="event.img">
+          <img ng-src="{{event.img}}">
+      </a>
+      <a ng-href="#/app/events/{{event._id}}" class="item item-text-wrap">
+            <h2>{{event.title}}</h2>
+            <p>{{event.description}}</p>
+            <p>{{event.date | date: 'HH:mm, dd/MM/yyyy'}}</p>
+      </a>
+      <div class="item tabs tabs-icon-only">
+        <a class="tab-item" ng-click="share(event)">
+          <i class="icon ion-android-share-alt"></i>
+        </a>
+        <a class="tab-item">
+
+        </a>
+        <a class="tab-item" ng-click="unsaveEvent(event)"
+        ng-show="isEventSaved(event)">
+            <i class="icon ion-heart ctext_red600"></i>
+        </a>
+        <a class="tab-item" ng-click="saveEvent(event)"
+        ng-hide="isEventSaved(event)">
+            <i class="icon ion-heart"></i>
+        </a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

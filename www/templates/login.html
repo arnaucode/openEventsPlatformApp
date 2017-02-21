@@ -1,0 +1,36 @@
+<ion-view view-title="Login">
+  <ion-content class="o_loginBackground">
+    <div>
+      <div class="o_loginDivForm">
+        <h1>Log in to post</h1>
+
+        <span class="item-note">v0.0.1</span>
+        <br><br>
+        <p>
+            <i class="icon ion-person"></i>
+            <input ng-model="loginData.email" class="o_loginInput"
+            placeholder="{{'Email' | translate}}">
+        </p>
+        <br>
+        <p>
+            <i class="icon ion-locked"></i>
+            <input ng-model="loginData.password" class="o_loginInput"
+            placeholder="{{'Password' | translate}}" style="-webkit-text-security: disc;">
+        </p>
+        <br>
+        <p>
+            <a class="o_loginButton button button-block c_blueGrey400" ng-click="doLogin()">
+                {{'LOG_IN' | translate}}
+            </a>
+        </p>
+        <br>
+        <p>
+
+        <a class="o_signupLink" ng-href="#/app/signup">
+            Need account? Contact us!
+        </a>
+        </p>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

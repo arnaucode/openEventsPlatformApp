@@ -1,5 +1,5 @@
-//var urlapi = "http://localhost:3000/api/";
-var urlapi = "http://192.168.1.34:3000/api/";
+var urlapi = "http://localhost:3000/api/";
+//var urlapi = "http://192.168.1.34:3000/api/";
 
 
 
@@ -13,8 +13,10 @@ angular.module('app', [
     'app.event',
     'app.alerts',
     'app.savedEvents',
+    'app.byCategories',
     'app.users',
-    'app.user'
+    'app.user',
+    'app.login'
   ])
 
 .run(function($ionicPlatform) {
@@ -89,6 +91,15 @@ angular.module('app', [
         }
       }
     })
+    .state('app.byCategories', {
+      url: '/byCategories',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/byCategories.html',
+          controller: 'ByCategoriesCtrl'
+        }
+      }
+    })
     .state('app.users', {
       url: '/users',
       views: {
@@ -104,6 +115,15 @@ angular.module('app', [
         'menuContent': {
           templateUrl: 'templates/user.html',
           controller: 'UserCtrl'
+        }
+      }
+    })
+    .state('app.login', {
+      url: '/login',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/login.html',
+          controller: 'LoginCtrl'
         }
       }
     });

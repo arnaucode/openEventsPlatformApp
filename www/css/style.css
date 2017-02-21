@@ -18,3 +18,50 @@
 .o_textRight{
     text-align: right;
 }
+.o_loginBackground{
+    height: 100%!important;
+    width: 100%;
+    min-height: auto;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+    background-image: url('../img/loginWallpaper.png');
+    text-align: center;
+    /*color: white;*/
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    color: #000000;
+
+    padding-top: 30%;
+}
+.o_loginBackground h1{
+    color: #000000!important;
+    margin: 10px;
+}
+.o_loginInput{
+    background: rgba(255, 255, 255, 0.2);
+    padding:10px;
+    color: #000000;
+    border: 0px;
+    width: 80%;
+    font-size: 120%;
+}
+.o_loginInput::-webkit-input-placeholder{
+    color: rgba(0, 0, 0, 0.6);
+}
+.o_loginButton{
+    color: rgba(0, 0, 0, 0.8);
+    font-weight: bold;
+    margin: 10%;
+}
+.o_signupLink{
+    text-decoration: none;
+    color: #000000;
+}
