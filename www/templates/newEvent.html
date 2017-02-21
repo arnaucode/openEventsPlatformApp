@@ -1,0 +1,36 @@
+<ion-view view-title="New Event">
+    <ion-content>
+        <div class="list">
+            <label class="item item-input">
+                <input type="text" ng-model="event.title" placeholder="Title">
+            </label>
+            <label class="item item-input">
+                <textarea ng-model="event.description" placeholder="Description"></textarea>
+            </label>
+            <label class="item-input">
+                <span class="input-label">{{'Date' | translate}}</span>
+                <input ng-model="event.date" type="date" placeholder="">
+            </label>
+            <label class="item-input">
+                <span class="input-label">{{'Hour' | translate}}</span>
+                <input ng-model="event.date" type="time" placeholder="">
+            </label>
+            <!--<label class="item item-input item-select">
+                <div class="input-label">
+                    Categories
+                </div>
+                <select>
+                    <option>Xerrada</option>
+                    <option>Esport</option>
+                    <option>Debat</option>
+                    <option>Taller</option>
+                </select>
+            </label>-->
+            <div class="item">
+                <div ng-click="postEvent()" class="button c_indigo400 item-note">
+                    Post new event!
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -16,7 +16,9 @@ angular.module('app', [
     'app.byCategories',
     'app.users',
     'app.user',
-    'app.login'
+    'app.login',
+    'app.userZone',
+    'app.newEvent'
   ])
 
 .run(function($ionicPlatform) {
@@ -124,6 +126,24 @@ angular.module('app', [
         'menuContent': {
           templateUrl: 'templates/login.html',
           controller: 'LoginCtrl'
+        }
+      }
+    })
+    .state('app.userZone', {
+      url: '/userZone',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/userZone.html',
+          controller: 'UserZoneCtrl'
+        }
+      }
+    })
+    .state('app.newEvent', {
+      url: '/newEvent',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/newEvent.html',
+          controller: 'NewEventCtrl'
         }
       }
     });
