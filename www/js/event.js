@@ -36,12 +36,12 @@ angular.module('app.event', ['pascalprecht.translate', 'ui-leaflet'])
                 $scope.markers.push({
                     lat: Number($scope.event.location.geo.lat),
                     lng: Number($scope.event.location.geo.long),
-                    message: $scope.event.location.name
+                    message: $scope.event.location.direction
                 });
                 $scope.center= {
-                    lat: (Number($scope.travel.from.lat)+Number($scope.travel.to.lat))/2,
-                    lng: (Number($scope.travel.from.long)+Number($scope.travel.to.long))/2,
-                    zoom: 4
+                    lat: Number($scope.event.location.geo.lat),
+                    lng: Number($scope.event.location.geo.long),
+                    zoom: 16
                 };
             }
 
