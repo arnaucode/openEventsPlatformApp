@@ -1,21 +1,18 @@
-angular.module('app.byCategories', ['pascalprecht.translate'])
+angular.module('app.byCategory', ['pascalprecht.translate'])
 
-.controller('ByCategoriesCtrl', function($scope, $http, $ionicModal,
-            $timeout, $ionicLoading, $filter) {
+.controller('ByCategoryCtrl', function($scope, $http, $ionicModal,
+            $timeout, $ionicLoading, $filter, $stateParams) {
 
-
+    $scope.category=$stateParams.categoryname;
     $scope.events=[];
-    $scope.alerts=[];
     $scope.page=0;
     $scope.doRefresh = function() {
       /* events refresh: */
         //$http.get(urlapi + 'events?page=' + $scope.page)
-        $http.get(urlapi + 'events')
+        $http.get(urlapi + 'events/category/'+ $stateParams.categoryname)
         .then(function(data){
-            console.log('data success events');
-            console.log(data); // for browser console
-            //$scope.events = data.data; // for UI
             $scope.events=data.data;
+            console.log($scope.events);
             $scope.$broadcast('scroll.refreshComplete');//refresher stop
 
         }, function(data){
@@ -23,11 +20,6 @@ angular.module('app.byCategories', ['pascalprecht.translate'])
             $scope.$broadcast('scroll.refreshComplete');//refresher stop
             $ionicLoading.show({ template: 'Error connecting server', noBackdrop: true, duration: 2000 });
 
-        });
-        $http.get(urlapi + 'alerts')
-        .then(function(data){
-            $scope.alerts=data.data;
-        }, function(data){
         });
     };
     $scope.doRefresh();
@@ -49,8 +41,6 @@ angular.module('app.byCategories', ['pascalprecht.translate'])
     $scope.$on('$ionicView.enter', function(){//per executar-ho cada cop que es carrega el view
         if (localStorage.getItem("events_app_savedEvents")) {
           $scope.savedEvents = JSON.parse(localStorage.getItem("events_app_savedEvents"));
-          console.log("savedEvents");
-          console.log($scope.savedEvents);
         }
     });
     $scope.saveEvent = function(event){

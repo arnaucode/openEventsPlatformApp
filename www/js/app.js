@@ -13,7 +13,8 @@ angular.module('app', [
     'app.event',
     'app.alerts',
     'app.savedEvents',
-    'app.byCategories',
+    'app.categories',
+    'app.byCategory',
     'app.users',
     'app.user',
     'app.login',
@@ -93,12 +94,21 @@ angular.module('app', [
         }
       }
     })
-    .state('app.byCategories', {
-      url: '/byCategories',
+    .state('app.categories', {
+      url: '/categories',
       views: {
         'menuContent': {
-          templateUrl: 'templates/byCategories.html',
-          controller: 'ByCategoriesCtrl'
+          templateUrl: 'templates/categories.html',
+          controller: 'CategoriesCtrl'
+        }
+      }
+    })
+    .state('app.byCategory', {
+      url: '/byCategory/:categoryname',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/byCategory.html',
+          controller: 'ByCategoryCtrl'
         }
       }
     })

@@ -65,3 +65,8 @@
     text-decoration: none;
     color: #000000;
 }
+.o_badge{
+    border-radius: 8px;
+    margin: 5px;
+    padding: 2px 5px;
+}

@@ -17,9 +17,14 @@
           <img ng-src="{{event.img}}">
       </a>
       <a ng-href="#/app/events/{{event._id}}" class="item item-text-wrap">
-            <h2>{{event.title}}</h2>
-            <p>{{event.description}}</p>
-            <p>{{event.date | date: 'HH:mm, dd/MM/yyyy'}}</p>
+          <div class="item-note">{{event.date | date: 'HH:mm, dd/MM/yyyy'}}</div>
+          <h2>{{event.title}}</h2>
+          <p>{{event.description}}</p>
+          <p>
+              <span class="o_badge c_blueGrey300" ng-repeat="category in event.categories">
+                  {{category.name}}
+              </span>
+          </p>
       </a>
       <div class="item tabs tabs-icon-only">
         <a class="tab-item" ng-click="share(event)">

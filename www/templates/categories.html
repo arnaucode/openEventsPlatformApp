@@ -1,0 +1,9 @@
+<ion-view view-title="Categories">
+    <ion-content>
+        <ion-list>
+            <a class="item" ng-href="#/app/byCategory/{{category.name}}" ng-repeat="category in categories">
+                {{category.name}}
+            </a>
+        </ion-list>
+    </ion-content>
+</ion-view>
