@@ -15,17 +15,16 @@
                 <span class="input-label">{{'Hour' | translate}}</span>
                 <input ng-model="event.date" type="time" placeholder="">
             </label>
-            <!--<label class="item item-input item-select">
-                <div class="input-label">
-                    Categories
-                </div>
-                <select>
-                    <option>Xerrada</option>
-                    <option>Esport</option>
-                    <option>Debat</option>
-                    <option>Taller</option>
-                </select>
-            </label>-->
+            <label class="item item-input">
+                <input type="text" ng-model="event.img" placeholder="img">
+            </label>
+            <ion-list>
+                Categories:
+                <ion-checkbox ng-model="category.selected" ng-repeat="category in categories"
+                ng-click="categorySelected()">
+                    {{category.name}}
+                </ion-checkbox>
+            </ion-list>
             <label class="item item-input">
                 <input type="text" ng-model="event.location.direction" placeholder="Direction">
             </label>

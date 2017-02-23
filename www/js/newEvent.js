@@ -3,8 +3,10 @@ angular.module('app.newEvent', ['pascalprecht.translate', 'ui-leaflet'])
 .controller('NewEventCtrl', function($scope, $http, $ionicModal, $timeout,
     $ionicLoading, $filter, leafletData, leafletBoundsHelpers) {
 
+
+    //initialization
     $scope.event={};
-    $scope.event.categories=[{name: "prova"}];
+    $scope.event.categories=[];
     $scope.event.location={
         direction: "",
         geo: {
@@ -13,6 +15,32 @@ angular.module('app.newEvent', ['pascalprecht.translate', 'ui-leaflet'])
             name: ""
         }
     };
+
+    //get list of categories
+    $scope.categories;
+    $http.get(urlapi + 'categoriesList')
+    .then(function(data){
+        $scope.categories=data.data;
+        console.log($scope.categories);
+    }, function(data){
+        console.log('data error');
+        console.log(data);
+        $ionicLoading.show({ template: 'Error connecting server', noBackdrop: true, duration: 2000 });
+
+    });
+    $scope.categorySelected = function(){
+        $scope.event.categories=[];
+        for(var i=0; i<$scope.categories.length; i++)
+        {
+            if($scope.categories[i].selected)
+            {
+                $scope.event.categories.push($scope.categories[i]);
+            }
+        }
+        console.log($scope.event.categories);
+    };
+
+
     $scope.postEvent = function(){
         $http({
             url: urlapi + 'events',
