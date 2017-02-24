@@ -10,11 +10,14 @@ angular.module('app', [
     'app.menu',
     'app.main',
     'app.events',
+    'app.mapEvents',
     'app.event',
     'app.alerts',
     'app.savedEvents',
     'app.categories',
     'app.byCategory',
+    'app.place',
+    'app.byPlace',
     'app.users',
     'app.user',
     'app.login',
@@ -67,6 +70,15 @@ angular.module('app', [
         }
       }
     })
+    .state('app.mapEvents', {
+      url: '/mapEvents',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/mapEvents.html',
+          controller: 'MapEventsCtrl'
+        }
+      }
+    })
     .state('app.event', {
       url: '/events/:eventid',
       views: {
@@ -109,6 +121,24 @@ angular.module('app', [
         'menuContent': {
           templateUrl: 'templates/byCategory.html',
           controller: 'ByCategoryCtrl'
+        }
+      }
+    })
+    .state('app.place', {
+      url: '/place',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/place.html',
+          controller: 'PlaceCtrl'
+        }
+      }
+    })
+    .state('app.byPlace', {
+      url: '/byPlace/:place',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/byPlace.html',
+          controller: 'ByPlaceCtrl'
         }
       }
     })

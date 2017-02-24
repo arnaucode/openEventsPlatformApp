@@ -1,0 +1,25 @@
+<ion-view view-title="Define a place">
+    <ion-content>
+        <label class="item item-input">
+            <input type="text" ng-model="place.location.direction" placeholder="Direction">
+        </label>
+        <div ng-click="getGeo()" class="button button-small c_indigo400 item-note"
+        ng-show="place.location.direction">
+            Get geolocation
+        </div>
+        <leaflet ng-show="markers[0]"
+        width="100%" height="40%" markers="markers" center="center"
+        tiles="tiles" id="map-simple-map"></leaflet>
+
+        <label class="item item-input">
+            <span class="input-label">Radius</span>
+            <input type="number">
+        </label>
+
+        <div class="item">
+            <div ng-click="postEvent()" class="button c_indigo400 item-note" ng-show="place.location.geo.lat">
+                Post new event!
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
