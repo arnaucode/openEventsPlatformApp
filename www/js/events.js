@@ -1,7 +1,7 @@
 angular.module('app.events', ['pascalprecht.translate'])
 
 .controller('EventsCtrl', function($scope, $http, $ionicModal,
-            $timeout, $ionicLoading, $filter) {
+            $timeout, $ionicLoading, $filter, $cordovaSocialSharing) {
 
 
     $scope.events=[];
