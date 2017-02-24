@@ -1,5 +1,5 @@
-var urlapi = "http://localhost:3000/api/";
-//var urlapi = "http://192.168.1.33:3000/api/";
+//var urlapi = "http://localhost:3000/api/";
+var urlapi = "http://192.168.1.33:3000/api/";
 
 
 
@@ -19,6 +19,7 @@ angular.module('app', [
     'app.place',
     'app.byPlace',
     'app.calendar',
+    'app.byDay',
     'app.users',
     'app.user',
     'app.login',
@@ -149,6 +150,15 @@ angular.module('app', [
         'menuContent': {
           templateUrl: 'templates/calendar.html',
           controller: 'CalendarCtrl'
+        }
+      }
+    })
+    .state('app.byDay', {
+      url: '/byDay/:day',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/byDay.html',
+          controller: 'ByDayCtrl'
         }
       }
     })

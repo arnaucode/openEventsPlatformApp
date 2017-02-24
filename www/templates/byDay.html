@@ -1,0 +1,7 @@
+<ion-view view-title="day: {{day}}">
+  <ion-content class="c_blueGrey100">
+    <ion-refresher pulling-text="{{'Pull_to_refresh' | translate}}..." on-refresh="doRefresh()">
+    </ion-refresher>
+    <div ng-include="'templates/templateEvents.html'"></div>
+  </ion-content>
+</ion-view>
