@@ -2,33 +2,7 @@
   <ion-content class="c_red200">
     <ion-refresher pulling-text="{{'Pull_to_refresh' | translate}}..." on-refresh="doRefresh()">
     </ion-refresher>
-    <div class="card" ng-repeat="event in events">
-      <a class="item item-avatar" ng-href="#/app/users/{{event.user._id}}">
-        <img ng-src="{{event.user.img}}">
-        <h2>{{event.user.username}}</h2>
-        <p>{{event.user.shortDescription}}</p>
-      </a>
-      <a ng-href="#/app/events/{{event._id}}" class="item item-text-wrap">
-        <h2>{{event.title}}</h2>
-        <p>{{event.description}}</p>
-        <p>{{event.date | date: 'HH:mm, dd/MM/yyyy'}}</p>
-      </a>
-      <div class="item tabs tabs-icon-only">
-        <a class="tab-item" ng-click="share(event)">
-          <i class="icon ion-android-share-alt"></i>
-        </a>
-        <a class="tab-item">
 
-        </a>
-        <a class="tab-item" ng-click="unsaveEvent(event)"
-        ng-show="isEventSaved(event)">
-            <i class="icon ion-heart ctext_red600"></i>
-        </a>
-        <a class="tab-item" ng-click="saveEvent(event)"
-        ng-hide="isEventSaved(event)">
-            <i class="icon ion-heart"></i>
-        </a>
-      </div>
-    </div>
+    <div ng-include="'templates/templateEvents.html'"></div>
   </ion-content>
 </ion-view>

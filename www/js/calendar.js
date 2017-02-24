@@ -1,5 +1,7 @@
-angular.module('app.calendar', ['pascalprecht.translate', 'ui.rCalendar'])
+angular.module('app.calendar', ['pascalprecht.translate'])
 
-.controller('CalendarCtrl', function($scope, $http, $ionicModal, $timeout, $ionicLoading, $filter) {
+.controller('CalendarCtrl', function($scope, $http, $ionicModal, $timeout,
+        $ionicLoading, $filter) {
+
 
 });

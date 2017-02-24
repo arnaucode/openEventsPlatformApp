@@ -6,7 +6,7 @@
     ng-show="alerts">
         <i class="icon ion-android-alert"></i> <b>{{alerts.length}}</b> Emergency alerts!
     </a>
-    <div class="card" ng-repeat="event in events">
+    <!--<div class="card" ng-repeat="event in events">
       <a class="item item-avatar" ng-href="#/app/users/{{event.user._id}}">
         <img ng-src="{{event.user.img}}">
         <h2>{{event.user.username}}</h2>
@@ -42,6 +42,7 @@
             <i class="icon ion-heart"></i>
         </a>
       </div>
-    </div>
+  </div>-->
+  <div ng-include="'templates/templateEvents.html'"></div>
   </ion-content>
 </ion-view>

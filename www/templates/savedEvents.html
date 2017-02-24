@@ -1,6 +1,6 @@
 <ion-view view-title="Saved Events">
   <ion-content class="c_blueGrey100">
-    <div class="card" ng-repeat="event in events">
+    <!--<div class="card" ng-repeat="event in events">
       <a class="item item-avatar" ng-href="#/app/users/{{event.user._id}}">
         <img ng-src="{{event.user.img}}">
         <h2>{{event.user.username}}</h2>
@@ -30,6 +30,8 @@
             <i class="icon ion-heart"></i>
         </a>
       </div>
-    </div>
+  </div>-->
+
+  <div ng-include="'templates/templateEvents.html'"></div>
   </ion-content>
 </ion-view>
