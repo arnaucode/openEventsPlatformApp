@@ -7,6 +7,7 @@
   "dependencies": {
     "angular-translate": "^2.14.0",
     "ui-leaflet": "^2.0.0",
-    "ngCordova": "^0.1.27-alpha"
+    "ngCordova": "^0.1.27-alpha",
+    "ionic-calendar": "^0.3.7"
   }
 }

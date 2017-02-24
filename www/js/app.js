@@ -18,6 +18,7 @@ angular.module('app', [
     'app.byCategory',
     'app.place',
     'app.byPlace',
+    'app.calendar',
     'app.users',
     'app.user',
     'app.login',
@@ -139,6 +140,15 @@ angular.module('app', [
         'menuContent': {
           templateUrl: 'templates/byPlace.html',
           controller: 'ByPlaceCtrl'
+        }
+      }
+    })
+    .state('app.calendar', {
+      url: '/calendar',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/calendar.html',
+          controller: 'CalendarCtrl'
         }
       }
     })
