@@ -33,12 +33,12 @@ angular.module('app.users', ['pascalprecht.translate'])
         }
     });
     $scope.followUser = function(user){
-        $scope.followingUsers.push(user);
+        $scope.followingUsers.push(user._id);
         localStorage.setItem("events_app_followingUsers", JSON.stringify($scope.followingUsers));
     };
     $scope.unfollowUser = function(user){
         for(var i=0; i<$scope.followingUsers.length; i++) {
-            if ($scope.followingUsers[i]._id === user._id){
+            if ($scope.followingUsers[i] === user._id){
                 $scope.followingUsers.splice(i, 1);
             }
         }
@@ -46,7 +46,7 @@ angular.module('app.users', ['pascalprecht.translate'])
     };
     $scope.isUserFollowed = function(user) {
         for(var i=0; i<$scope.followingUsers.length; i++) {
-            if ($scope.followingUsers[i]._id === user._id){
+            if ($scope.followingUsers[i] === user._id){
                 return true;
             }
         }

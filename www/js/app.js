@@ -24,7 +24,10 @@ angular.module('app', [
     'app.user',
     'app.login',
     'app.userZone',
-    'app.newEvent'
+    'app.newEvent',
+    'app.editUser',
+    'app.statistics',
+    'app.newAlert'
   ])
 
 .run(function($ionicPlatform) {
@@ -204,6 +207,33 @@ angular.module('app', [
         'menuContent': {
           templateUrl: 'templates/newEvent.html',
           controller: 'NewEventCtrl'
+        }
+      }
+    })
+    .state('app.editUser', {
+      url: '/editUser',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/editUser.html',
+          controller: 'EditUserCtrl'
+        }
+      }
+    })
+    .state('app.statistics', {
+      url: '/statistics',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/statistics.html',
+          controller: 'StatisticsCtrl'
+        }
+      }
+    })
+    .state('app.newAlert', {
+      url: '/newAlert',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/newAlert.html',
+          controller: 'NewAlertCtrl'
         }
       }
     });

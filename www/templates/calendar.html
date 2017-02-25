@@ -1,4 +1,11 @@
 <ion-view view-title="Calendar">
   <ion-content>
+      Aquí la idea és un calendari que t'ha enviat el server, on als dies que hi ha coses, apareixen amb colors.
+      I quan cliques a un dia, et porta als events d'aquell dia.
+      <ion-list>
+          <a class="item" ng-href="#/app/byDay/{{day}}" ng-repeat="day in days">
+              {{day | date: 'dd/MMMM'}}
+          </a>
+      </ion-list>
   </ion-content>
 </ion-view>

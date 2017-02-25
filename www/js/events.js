@@ -7,10 +7,17 @@ angular.module('app.events', ['pascalprecht.translate'])
     $scope.events=[];
     $scope.alerts=[];
     $scope.page=0;
+
     $scope.doRefresh = function() {
       /* events refresh: */
         //$http.get(urlapi + 'events?page=' + $scope.page)
-        $http.get(urlapi + 'events')
+        $scope.followingUsers = JSON.parse(localStorage.getItem("events_app_followingUsers"));
+        console.log($scope.followingUsers);
+        $http({
+            url: urlapi + 'events/following',
+            method: "POST",
+            data: {users: $scope.followingUsers}
+        })
         .then(function(data){
             console.log('data success events');
             console.log(data); // for browser console
