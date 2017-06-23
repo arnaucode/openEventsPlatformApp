@@ -15,9 +15,11 @@
                 <span class="input-label">{{'Hour' | translate}}</span>
                 <input ng-model="event.date" type="time" placeholder="">
             </label>
-            <label class="item item-input">
+            <!--<label class="item item-input">
                 <input type="text" ng-model="event.img" placeholder="img">
-            </label>
+            </label>-->
+            <div ng-hide="event.imgpreview" class="button" ng-click="selectImgFile()">Select image</div>
+            <img ng-src="{{event.imgpreview}}" ng-click="selectImgFile()"/>
             <ion-list>
                 Categories:
                 <ion-checkbox ng-model="category.selected" ng-repeat="category in categories"

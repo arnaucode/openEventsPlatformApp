@@ -1,7 +1,8 @@
 angular.module('app.newEvent', ['pascalprecht.translate', 'ui-leaflet'])
 
 .controller('NewEventCtrl', function($scope, $http, $ionicModal, $timeout,
-    $ionicLoading, $filter, leafletData, leafletBoundsHelpers) {
+    $ionicLoading, $filter, leafletData, leafletBoundsHelpers,
+    $cordovaCamera) {
 
 
     //initialization
@@ -14,6 +15,30 @@ angular.module('app.newEvent', ['pascalprecht.translate', 'ui-leaflet'])
             long: "",
             name: ""
         }
+    };
+
+    //imgfile
+    $scope.selectImgFile = function() {
+      console.log("img");
+      var options = {
+        quality: 100,
+        destinationType: Camera.DestinationType.DATA_URL,
+        sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
+        allowEdit: true,
+        encodingType: Camera.EncodingType.PNG,
+        targetWidth: 500,
+        targetHeight: 500,
+        popoverOptions: CameraPopoverOptions,
+        saveToPhotoAlbum: false,
+        correctOrientation: true
+      };
+
+      $cordovaCamera.getPicture(options).then(function(imageData) {
+        $scope.event.imgpreview = "data:image/jpeg;base64," + imageData;
+        $scope.event.img = imageData;
+      }, function(err) {
+        console.log(err);
+      });
     };
 
     //get list of categories

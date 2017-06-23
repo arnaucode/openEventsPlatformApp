@@ -3,7 +3,7 @@
 
 node_modules/
 platforms/
-#plugins/
+plugins/
 npm-debug.log
 .idea/
 www/lib/
