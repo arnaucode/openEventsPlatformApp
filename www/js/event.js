@@ -1,7 +1,7 @@
 angular.module('app.event', ['pascalprecht.translate', 'ui-leaflet'])
 
 .controller('EventCtrl', function($scope, $http, $ionicModal,
-        $stateParams, $timeout, $ionicLoading, $filter,
+        $stateParams, $timeout, $ionicLoading, $filter, $ionicPopup,
         leafletData, leafletBoundsHelpers, $cordovaSocialSharing) {
 
 
@@ -67,5 +67,38 @@ angular.module('app.event', ['pascalprecht.translate', 'ui-leaflet'])
         }, function(err) {
           // An error occured. Show a message to the user
       });
+    };
+
+
+
+    $scope.deleteEvent = function(){
+       var confirmPopup = $ionicPopup.confirm({
+         title: 'Deleting event',
+         template: 'Are you sure you want to delete <b>'+ $scope.event.title+'</b>?'
+       });
+       confirmPopup.then(function(res) {
+       if(res) {
+         console.log('You are sure');
+         console.log("delete travel: " + $stateParams.eventid);
+         $http({
+             url: urlapi + '/events/id/' + $stateParams.eventid,
+             method: "DELETE"
+         })
+         .then(function(response) {
+                 console.log(response);
+                 $scope.events=response.data;
+                 /*localStorage.setItem('c_travels', JSON.stringify($scope.travels));
+                 localStorage.setItem('c_travelsLastDate', JSON.stringify(new Date()));*/
+                 $ionicLoading.show({ template: 'Event deleted', noBackdrop: true, duration: 2000 });
+                 window.location.href="#/app/main";
+         },
+         function(response) { // optional
+                 // failed
+                 $ionicLoading.show({ template: 'Error connecting server', noBackdrop: true, duration: 2000 });
+         });
+       } else {
+         console.log('You are not sure');
+       }
+     });
     };
 });
